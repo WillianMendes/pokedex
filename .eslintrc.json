@@ -12,5 +12,12 @@
         "ecmaVersion": 12
     },
     "rules": {
+        "import/extensions": ["error", "ignorePackages", {
+            "ts": "never",
+            "tsx": "never",
+            "js": "always",
+            "jsx": "never",
+            "mjs": "never"
+        }]
     }
 }

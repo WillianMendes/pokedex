@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Projeto pokédex: construção de uma pokédex online, utilizando HTML, CSS e Javascript, além de consumir uma API online.",
   "main": "js/main.js",
+  "type": "module",
   "scripts": {
     "test": "test",
     "stylelint-check": "stylelint-config-prettier-check"
