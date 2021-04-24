@@ -2,7 +2,7 @@ import { template, css } from "../template/pokeball.js";
 
 const createPokeball = (addStyle, pokeballHtml = template, style = css) => {
   const body = document.getElementsByTagName("body")[0];
-  body.innerHTML = pokeballHtml;
+  body.innerHTML += pokeballHtml;
   addStyle(style);
 };
 
