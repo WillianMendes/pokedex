@@ -1,6 +1,7 @@
 import {
   getElementById,
   getElementsByClass,
+  parseHTML,
   createPokeCard,
   insertPokeAvatar,
 } from "./util/dom.js";
@@ -26,11 +27,12 @@ const finishedLoading = () => {
   }, 1000);
 };
 
-const createCardElement = (pokemon) => {
-  Pokemon.getPokemonByUrl(pokemon.url).then((details) => {
+const createCardElement = async (pokemon) => {
+  await Pokemon.getPokemonByUrl(pokemon.url).then((details) => {
     const pokeCard = createPokeCard(pokemon.name);
+    const pokeCardElement = parseHTML(pokeCard);
     const container = getElementsByClass("poke-container")[0];
-    container.innerHTML += pokeCard;
+    container.appendChild(pokeCardElement);
     insertPokeAvatar(
       `${details.name}_id`,
       details.sprites.other["official-artwork"].front_default
@@ -39,9 +41,13 @@ const createCardElement = (pokemon) => {
 };
 
 const getPaginationPokemons = (offset = 0, limit = 20) => {
-  Pokemon.getAllPokemons(offset, limit).then((poke) => {
+  Pokemon.getAllPokemons(offset, limit).then(async (poke) => {
     initLoading();
-    poke.results.forEach((pokemon) => createCardElement(pokemon));
+    const pokemons = poke.results;
+    for (let i = 0; i < pokemons.length; i += 1) {
+      // eslint-disable-next-line no-await-in-loop
+      await createCardElement(pokemons[i]);
+    }
     finishedLoading();
   });
 };
