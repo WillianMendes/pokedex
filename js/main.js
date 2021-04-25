@@ -13,6 +13,9 @@ import {
 } from "./pokeballLoading.js";
 import Pokemon from "./model/pokemon.js";
 
+let offsetActual = 20;
+const limitActual = 20;
+
 const initLoading = () => {
   const content = getElementsByClass("container")[0];
   content.classList.add("util-hidden");
@@ -32,7 +35,7 @@ const orderPokemons = (id) => {
   element.style.order = id;
 };
 
-const createCardElement = (pokemon) =>
+const createCardElement = async (pokemon) =>
   Pokemon.getPokemonByUrl(pokemon.url).then((details) => {
     const pokeCard = createPokeCard(details.id, pokemon.name);
     const pokeCardElement = parseHTML(pokeCard);
@@ -45,14 +48,23 @@ const createCardElement = (pokemon) =>
     );
   });
 
-const getPaginationPokemons = (offset = 0, limit = 200) => {
+const getPaginationPokemons = (offset = 0, limit = 20) => {
   Pokemon.getAllPokemons(offset, limit).then((poke) => {
-    initLoading();
     poke.results.forEach((pokemon) => createCardElement(pokemon).then());
-    finishedLoading();
   });
 };
 
+const activatePagination = () => {
+  const { scrollHeight, scrollTop, clientHeight } = document.documentElement;
+  if (scrollTop + clientHeight > scrollHeight - 5) {
+    getPaginationPokemons(offsetActual);
+    offsetActual += limitActual;
+  }
+};
+
 window.onload = async () => {
+  initLoading();
   getPaginationPokemons();
+  finishedLoading();
+  window.addEventListener("scroll", activatePagination);
 };
