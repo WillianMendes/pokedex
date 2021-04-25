@@ -56,7 +56,7 @@ const getPaginationPokemons = (offset = 0, limit = 20) => {
 
 const activatePagination = () => {
   const { scrollHeight, scrollTop, clientHeight } = document.documentElement;
-  if (scrollTop + clientHeight > scrollHeight - 5) {
+  if (scrollTop + clientHeight > scrollHeight - 15) {
     getPaginationPokemons(offsetActual);
     offsetActual += limitActual;
   }
