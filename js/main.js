@@ -58,7 +58,7 @@ const activatePagination = () => {
   const windowRelativeBottom = document.documentElement.getBoundingClientRect()
     .bottom;
 
-  if (windowRelativeBottom < document.documentElement.clientHeight + 100) {
+  if (windowRelativeBottom < document.documentElement.clientHeight + 125) {
     offsetActual += 20;
     getPaginationPokemons(offsetActual);
   }
