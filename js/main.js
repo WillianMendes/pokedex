@@ -67,4 +67,5 @@ window.onload = async () => {
   getPaginationPokemons();
   finishedLoading();
   window.addEventListener("scroll", activatePagination);
+  window.addEventListener("touchmove", activatePagination);
 };
