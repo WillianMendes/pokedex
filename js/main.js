@@ -13,7 +13,7 @@ import {
 } from "./pokeballLoading.js";
 import Pokemon from "./model/pokemon.js";
 
-let offsetActual = 20;
+let offsetActual = 0;
 const limitActual = 20;
 
 const initLoading = () => {
@@ -58,19 +58,16 @@ const activatePagination = () => {
   const windowRelativeBottom = document.documentElement.getBoundingClientRect()
     .bottom;
 
-  if (windowRelativeBottom < document.documentElement.clientHeight + 150) {
-    getPaginationPokemons(offsetActual);
+  if (windowRelativeBottom < document.documentElement.clientHeight + 100) {
     offsetActual += 20;
+    getPaginationPokemons(offsetActual);
   }
 };
 
 window.onload = async () => {
-  const touch = matchMedia("(hover: none), (pointer: coarse)").matches;
-
   initLoading();
   getPaginationPokemons();
   finishedLoading();
 
-  if (touch) window.addEventListener("touchmove", activatePagination);
-  else window.addEventListener("scroll", activatePagination);
+  window.addEventListener("scroll", activatePagination);
 };
