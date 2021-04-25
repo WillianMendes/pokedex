@@ -55,17 +55,22 @@ const getPaginationPokemons = (offset = 0, limit = 20) => {
 };
 
 const activatePagination = () => {
-  const { scrollHeight, scrollTop, clientHeight } = document.documentElement;
-  if (scrollTop + clientHeight > scrollHeight - 15) {
+  const windowRelativeBottom = document.documentElement.getBoundingClientRect()
+    .bottom;
+
+  if (windowRelativeBottom < document.documentElement.clientHeight + 150) {
     getPaginationPokemons(offsetActual);
-    offsetActual += limitActual;
+    offsetActual += 20;
   }
 };
 
 window.onload = async () => {
+  const touch = matchMedia("(hover: none), (pointer: coarse)").matches;
+
   initLoading();
   getPaginationPokemons();
   finishedLoading();
-  window.addEventListener("scroll", activatePagination);
-  window.addEventListener("touchmove", activatePagination);
+
+  if (touch) window.addEventListener("touchmove", activatePagination);
+  else window.addEventListener("scroll", activatePagination);
 };
