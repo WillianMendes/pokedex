@@ -14,8 +14,8 @@ const insertPokeAvatar = (id, urlImg) => {
   pokeImg.style.backgroundImage = `url('${urlImg}')`;
 };
 
-const createPokeCard = (name) => `<div class="poke-card">
-    <div id="${name}_id" class="poke-img-card"></div>
+const createPokeCard = (id, name) => `<div id="${id}" class="poke-card">
+    <div id="${id}_img" class="poke-img-card"></div>
     <div class="poke-body-card">
       <div class="poke-title">
         <span>${name}</span>

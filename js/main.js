@@ -24,30 +24,31 @@ const finishedLoading = () => {
   setTimeout(() => {
     removePokeball(removePokeballStyle);
     content.classList.remove("util-hidden");
-  }, 1000);
+  }, 500);
 };
 
-const createCardElement = async (pokemon) => {
-  await Pokemon.getPokemonByUrl(pokemon.url).then((details) => {
-    const pokeCard = createPokeCard(pokemon.name);
+const orderPokemons = (id) => {
+  const element = getElementById(id);
+  element.style.order = id;
+};
+
+const createCardElement = (pokemon) =>
+  Pokemon.getPokemonByUrl(pokemon.url).then((details) => {
+    const pokeCard = createPokeCard(details.id, pokemon.name);
     const pokeCardElement = parseHTML(pokeCard);
     const container = getElementsByClass("poke-container")[0];
     container.appendChild(pokeCardElement);
+    orderPokemons(details.id);
     insertPokeAvatar(
-      `${details.name}_id`,
+      `${details.id}_img`,
       details.sprites.other["official-artwork"].front_default
     );
   });
-};
 
-const getPaginationPokemons = (offset = 0, limit = 20) => {
-  Pokemon.getAllPokemons(offset, limit).then(async (poke) => {
+const getPaginationPokemons = (offset = 0, limit = 200) => {
+  Pokemon.getAllPokemons(offset, limit).then((poke) => {
     initLoading();
-    const pokemons = poke.results;
-    for (let i = 0; i < pokemons.length; i += 1) {
-      // eslint-disable-next-line no-await-in-loop
-      await createCardElement(pokemons[i]);
-    }
+    poke.results.forEach((pokemon) => createCardElement(pokemon).then());
     finishedLoading();
   });
 };
