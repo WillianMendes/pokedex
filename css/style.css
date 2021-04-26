@@ -9,6 +9,7 @@
 body {
     background-color: var(--color-violet-l);
     color: var(--color-white);
+    margin: 0;
 }
 
 .util-hidden {
@@ -16,10 +17,52 @@ body {
     visibility: hidden;
 }
 
+.container {
+    margin: 0 16px;
+}
+
+header {
+    background-color: var(--color-violet);
+    margin-bottom: 16px;
+}
+
+header .container {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 0 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    max-height: 60px;
+    margin-left: -4px;
+}
+
+header .main-menu {
+    display: flex;
+}
+
+header .main-menu a {
+    padding: 32px 8px;
+    color: var(--color-white);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+header .main-menu a:hover {
+    color: var(--color-rose);
+}
+
+header .main-menu .active {
+    color: var(--color-rose);
+}
+
 .poke-container {
     max-width: 920px;
     margin: 0 auto;
-    justify-content: space-evenly;
+    justify-content: space-between;
     display: flex;
     flex-flow: row;
     flex-wrap: wrap;
