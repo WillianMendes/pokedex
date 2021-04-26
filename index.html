@@ -8,18 +8,20 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header>
+<div class="main">
+  <header>
+    <div class="container">
+      <img class="logo" src="image/poke-logo.png" alt="Logo pokedex">
+      <nav class="main-menu">
+        <a href="#" class="active">Pokemons</a>
+        <a href="#">Capture</a>
+        <a href="#">Seja meu chefe</a>
+      </nav>
+    </div>
+  </header>
   <div class="container">
-    <img class="logo" src="image/poke-logo.png" alt="Logo pokedex">
-    <nav class="main-menu">
-      <a href="#" class="active">Pokemons</a>
-      <a href="#">Capture</a>
-      <a href="#">Seja meu chefe</a>
-    </nav>
+    <div class="poke-container"></div>
   </div>
-</header>
-<div class="container">
-  <div class="poke-container"></div>
 </div>
 <script src="js/main.js" type="module"></script>
 </body>

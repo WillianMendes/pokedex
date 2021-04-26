@@ -17,13 +17,13 @@ let offsetActual = 0;
 const limitActual = 20;
 
 const initLoading = () => {
-  const content = getElementsByClass("container")[0];
+  const content = getElementsByClass("main")[0];
   content.classList.add("util-hidden");
   createPokeball(addPokeballStyle);
 };
 
 const finishedLoading = () => {
-  const content = getElementsByClass("container")[0];
+  const content = getElementsByClass("main")[0];
   setTimeout(() => {
     removePokeball(removePokeballStyle);
     content.classList.remove("util-hidden");
