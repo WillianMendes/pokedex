@@ -23,7 +23,7 @@ body {
 
 header {
     background-color: var(--color-violet);
-    margin-bottom: 16px;
+    margin-bottom: 32px;
 }
 
 header .container {
@@ -70,7 +70,7 @@ header .main-menu .active {
 
 .poke-card {
     width: 200px;
-    margin-bottom: 32px;
+    margin-bottom: 16px;
 }
 
 .poke-img-card {
@@ -108,6 +108,10 @@ header .main-menu .active {
         flex-direction: row-reverse;
     }
 
+    header .logo {
+        max-height: 40px;
+    }
+
     header svg {
         fill-rule: evenodd;
         clip-rule: evenodd;
@@ -115,8 +119,8 @@ header .main-menu .active {
         stroke-linejoin: round;
         stroke-miterlimit: 1.5;
         cursor:pointer;
-        height: 35px;
-        width: 60px;
+        height: 25px;
+        width: 50px;
     }
 
     header svg path {
