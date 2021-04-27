@@ -85,6 +85,11 @@ header .main-menu .active {
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+    transition: 1s;
+}
+
+.poke-card:hover > .poke-img-card {
+    background-color: var(--color-black);
 }
 
 .poke-title {
@@ -92,11 +97,17 @@ header .main-menu .active {
     padding: 8px;
     border-radius: 0 0 8px 8px;
     text-align: center;
+    transition: 1s;
 }
 
 .poke-title span {
     font-weight: 600;
     color: var(--color-white);
+}
+
+.poke-card:hover > .poke-body-card .poke-title {
+    background-color: var(--color-violet);
+    color: var(--color-violet);
 }
 
 @media screen and (max-width: 599px) {
