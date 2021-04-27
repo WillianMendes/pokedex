@@ -94,3 +94,34 @@ header .main-menu .active {
     font-weight: 600;
     color: var(--color-white);
 }
+
+@media screen and (max-width: 599px) {
+    header {
+        padding: 8px 0;
+    }
+
+    header .main-menu {
+        display: none;
+    }
+
+    .container {
+        margin: 0;
+    }
+
+    .poke-container {
+        justify-content: center;
+    }
+
+    .poke-card {
+        width: 100%;
+    }
+
+    .poke-img-card {
+        height: 200px;
+        border-radius: 0;
+    }
+
+    .poke-title {
+        border-radius: 0;
+    }
+}
