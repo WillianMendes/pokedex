@@ -96,6 +96,10 @@ header .main-menu .active {
 }
 
 @media screen and (max-width: 599px) {
+    .container {
+        margin: 0;
+    }
+
     header {
         padding: 8px 0;
     }
@@ -133,10 +137,6 @@ header .main-menu .active {
 
     header .main-menu {
         display: none;
-    }
-
-    .container {
-        margin: 0;
     }
 
     .poke-container {
