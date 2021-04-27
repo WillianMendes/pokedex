@@ -14,7 +14,6 @@ import {
 import Pokemon from "./model/pokemon.js";
 
 let offsetActual = 0;
-const limitActual = 20;
 
 const initLoading = () => {
   const content = getElementsByClass("main")[0];
@@ -35,12 +34,20 @@ const orderPokemons = (id) => {
   element.style.order = id;
 };
 
+const loadPagePokemon = (id) => {
+  localStorage.setItem("pokemonCurrent", id);
+  window.location.href = "/pokedex/pokemon.html";
+};
+
 const createCardElement = async (pokemon) =>
   Pokemon.getPokemonByUrl(pokemon.url).then((details) => {
     const pokeCard = createPokeCard(details.id, pokemon.name);
     const pokeCardElement = parseHTML(pokeCard);
     const container = getElementsByClass("poke-container")[0];
     container.appendChild(pokeCardElement);
+    container.lastElementChild.addEventListener("click", () =>
+      loadPagePokemon(details.id)
+    );
     orderPokemons(details.id);
     insertPokeAvatar(
       `${details.id}_img`,
@@ -71,3 +78,5 @@ window.onload = async () => {
 
   window.addEventListener("scroll", activatePagination);
 };
+
+export { initLoading, finishedLoading };

@@ -75,6 +75,7 @@ header .main-menu .active {
 .poke-card {
     width: 200px;
     margin-bottom: 16px;
+    cursor: pointer;
 }
 
 .poke-img-card {
