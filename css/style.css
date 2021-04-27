@@ -111,6 +111,161 @@ header .main-menu .active {
     color: var(--color-violet);
 }
 
+.poke-container-main {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.poke-container-main .poke-main {
+    display: flex;
+    flex-direction: row;
+}
+
+.poke-main .poke-img {
+    width: 40%;
+    height: 100%;
+    margin-right: 32px;
+}
+
+.poke-main .poke-img img {
+    width: 100%;
+    max-width: 250px;
+}
+
+.poke-main .poke-info {
+    background-color: var(--color-violet);
+    color: var(--color-white);
+    border-radius: 16px;
+    width: 60%;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+}
+
+.poke-main .poke-info .left {
+    width: 50%;
+}
+
+.poke-main .poke-info .right {
+    width: 50%;
+}
+
+.poke-main .poke-info .poke-types span,
+.poke-main .poke-info .poke-abilities span {
+    background-color: black;
+    border-radius: 8px;
+    padding: 6px 8px;
+}
+
+.poke-main .poke-info .poke-types span.grass {
+    background-color: green;
+}
+
+.poke-main .poke-info .poke-types span.poison {
+    background-color: blueviolet;
+}
+
+.poke-stats {
+    background-color: var(--color-violet);
+    color: var(--color-white);
+    border-radius: 16px;
+    padding: 16px;
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.poke-stats .poke-stats-left {
+    margin-right: 8px;
+}
+
+.poke-stats .poke-stats-right {
+    margin-left: 8px;
+}
+
+.poke-stats .poke-stats-left,
+.poke-stats .poke-stats-right {
+    width: 50%;
+}
+
+.label {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.bar-box .bar {
+    width: 100%;
+    height: 8px;
+    background-color: var(--color-black);
+    border-radius: 8px;
+    margin: 4px 0 12px 0;
+}
+
+.bar-box .bar .bar-fill {
+    background-color: var(--color-rose);
+}
+
+.bar-10 {
+    width: 10%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.bar-20 {
+    width: 20%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.bar-30 {
+    width: 30%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.bar-40 {
+    width: 40%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.bar-50 {
+    width: 50%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.bar-60 {
+    width: 60%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.bar-70 {
+    width: 70%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.bar-80 {
+    width: 80%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.bar-90 {
+    width: 90%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.bar-100 {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
 @media screen and (max-width: 599px) {
     .container {
         margin: 0;
