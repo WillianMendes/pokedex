@@ -95,6 +95,51 @@ body {
     height: auto;
 }
 
+/**
+ * Poke Cards Colors
+ */
+.poke-card-black {
+    background-color: var(--poke-color-black);
+}
+
+.poke-card-white {
+    background-color: var(--poke-color-white);
+    color: var(--color-text-dark);
+}
+
+.poke-card-blue {
+    background-color: var(--poke-color-blue);
+}
+
+.poke-card-brown {
+    background-color: var(--poke-color-brown);
+}
+
+.poke-card-gray {
+    background-color: var(--poke-color-gray);
+}
+
+.poke-card-green {
+    background-color: var(--poke-color-green);
+}
+
+.poke-card-pink {
+    background-color: var(--poke-color-pink);
+}
+
+.poke-card-purple {
+    background-color: var(--poke-color-purple);
+}
+
+.poke-card-red {
+    background-color: var(--poke-color-red);
+}
+
+.poke-card-yellow {
+    background-color: var(--poke-color-yellow);
+    color: var(--color-text-dark);
+}
+
 .util-hidden {
     display: none;
     visibility: hidden;
