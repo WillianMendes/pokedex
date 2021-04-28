@@ -64,6 +64,7 @@ body {
 .poke-card .poke-card-info h2 {
     font-size: 1.5rem;
     font-weight: 600;
+    text-transform: capitalize;
     margin-bottom: 1rem;
 }
 
@@ -71,6 +72,7 @@ body {
     background-color: var(--color-white);
     color: var(--color-text-dark);
     text-align: center;
+    text-transform: capitalize;
     margin-bottom: 0.5rem;
     padding: 0.25rem;
     border-radius: 0.5rem;
