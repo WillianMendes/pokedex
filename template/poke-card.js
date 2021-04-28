@@ -1,5 +1,5 @@
 const templateTypes = (types) =>
-  types.map((type) => `<span class='poke-card-type'>${type.type.name}</span>`);
+  types.map((type) => `<span class='poke-card-type'>${type}</span>`);
 
 const template = (pokemon) =>
   `<div id="${pokemon.id}" class="poke-card">
@@ -9,7 +9,7 @@ const template = (pokemon) =>
       <span class="poke-card-id">#${pokemon.id}</span>
     </div>
     <div class="poke-card-img">
-      <img src="${pokemon.src}" alt="${pokemon.name}">
+      <img src="${pokemon.imgSrc}" alt="${pokemon.name}">
     </div>
   </div>`.replace(",", "");
 
