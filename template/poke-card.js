@@ -2,7 +2,7 @@ const templateTypes = (types) =>
   types.map((type) => `<span class='poke-card-type'>${type}</span>`);
 
 const template = (pokemon) =>
-  `<div id="${pokemon.id}" class="poke-card">
+  `<div id="${pokemon.id}" class="poke-card ${pokemon.color}">
     <div class="poke-card-info">
       <h2>${pokemon.name}</h2>
       ${templateTypes(pokemon.types)}
