@@ -1,9 +1,31 @@
+/**
+ * Colors
+ */
 :root {
-    --color-black: #181010;
-    --color-violet: #84739c;
-    --color-rose: #f7b58c;
-    --color-violet-l: #ffefff;
-    --color-white: rgba(255, 255, 255, 0.9);
+    --color-primary: #673AB7;
+    --color-primary-light: #9575CD;
+    --color-primary-dark: #512DA8;
+    --color-secondary: #FFEB3B;
+    --color-secondary-light: #FFF176;
+    --color-secondary-dark: #FBC02D;
+    --color-text: #EDE7F6;
+    --color-text-dark: #0D0724;
+    --color-white: #EDE7F6;
+    --color-black: #0D0724;
+
+    /**
+    * Poke Colors
+    */
+    --poke-color-black: #000;
+    --poke-color-blue: #000;
+    --poke-color-brown: #000;
+    --poke-color-gray: #000;
+    --poke-color-green: #000;
+    --poke-color-pink: #000;
+    --poke-color-purple: #000;
+    --poke-color-red: #000;
+    --poke-color-white: #000;
+    --poke-color-yellow: #000;
 }
 
 /**
