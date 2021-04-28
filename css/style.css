@@ -15,6 +15,10 @@
     border: none;
 }
 
+body {
+    font-size: 16px;
+}
+
 .util-hidden {
     display: none;
     visibility: hidden;
