@@ -16,16 +16,16 @@
     /**
     * Poke Colors
     */
-    --poke-color-black: #000;
-    --poke-color-blue: #000;
-    --poke-color-brown: #000;
-    --poke-color-gray: #000;
-    --poke-color-green: #000;
-    --poke-color-pink: #000;
-    --poke-color-purple: #000;
-    --poke-color-red: #000;
-    --poke-color-white: #000;
-    --poke-color-yellow: #000;
+    --poke-color-black: #000000E5;
+    --poke-color-blue: #2196F3;
+    --poke-color-brown: #795548;
+    --poke-color-gray: #9E9E9E;
+    --poke-color-green: #4CAF50;
+    --poke-color-pink: #E91E63;
+    --poke-color-purple: #9C27B0;
+    --poke-color-red: #f44336;
+    --poke-color-white: #FFFFFFE5;
+    --poke-color-yellow: #FFEB3B;
 }
 
 /**
