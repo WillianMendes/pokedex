@@ -12,6 +12,7 @@ import {
   removePokeballStyle,
 } from "./pokeballLoading.js";
 import Pokemon from "./model/pokemon.js";
+import template from "../template/poke-card.js";
 
 let offsetActual = 0;
 
@@ -41,7 +42,15 @@ const loadPagePokemon = (id) => {
 
 const createCardElement = async (pokemon) =>
   Pokemon.getPokemonByUrl(pokemon.url).then((details) => {
-    const pokeCard = createPokeCard(details.id, pokemon.name);
+    console.log(details);
+    const pokeImg = details.sprites.other["official-artwork"].front_default;
+
+    const pokeCard = template({
+      id: details.id,
+      name: details.name,
+      types: details.types,
+      src: pokeImg,
+    });
     const pokeCardElement = parseHTML(pokeCard);
     const container = getElementsByClass("poke-container")[0];
     container.appendChild(pokeCardElement);
@@ -49,10 +58,6 @@ const createCardElement = async (pokemon) =>
       loadPagePokemon(details.id)
     );
     orderPokemons(details.id);
-    insertPokeAvatar(
-      `${details.id}_img`,
-      details.sprites.other["official-artwork"].front_default
-    );
   });
 
 const getPaginationPokemons = (offset = 0, limit = 20) => {
