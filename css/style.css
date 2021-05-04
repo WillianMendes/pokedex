@@ -8,9 +8,9 @@
     --color-secondary: #FFEB3B;
     --color-secondary-light: #FFF176;
     --color-secondary-dark: #FBC02D;
-    --color-text: #EDE7F6;
+    --color-text: #FFFFFFFE;
     --color-text-dark: #0D0724;
-    --color-white: #EDE7F6;
+    --color-white: #FFFFFFFE;
     --color-black: #0D0724;
 
     /**
@@ -163,22 +163,15 @@ body {
     flex-wrap: wrap;
 }
 
-.util-hidden {
-    display: none;
-    visibility: hidden;
-}
-
+/**
+ * Header
+ */
 header {
-    background-color: var(--color-violet);
-    margin-bottom: 32px;
-}
-
-header svg {
-    display: none;
-}
-
-header .container {
-    max-width: 920px;
+    position: fixed;
+    top: 1rem;
+    background-color: var(--poke-color-red);
+    border-radius: 0 32px 32px 0;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 4px 16px 0;
     margin: 0 auto;
     padding: 0 16px;
     display: flex;
@@ -186,9 +179,13 @@ header .container {
     align-items: center;
 }
 
+header svg {
+    display: none;
+}
+
 header .logo {
-    max-height: 60px;
-    margin-left: -4px;
+    max-height: 50px;
+    margin-left: 16px;
 }
 
 header .main-menu {
@@ -196,18 +193,26 @@ header .main-menu {
 }
 
 header .main-menu a {
-    padding: 32px 8px;
-    color: var(--color-white);
+    padding: 24px 8px;
+    color: var(--color-text);
     text-decoration: none;
     font-weight: 600;
 }
 
 header .main-menu a:hover {
-    color: var(--color-rose);
+    color: var(--color-secondary-light);
 }
 
 header .main-menu .active {
-    color: var(--color-rose);
+    color: var(--color-text-dark);
+}
+
+/**
+ * Class utils
+ */
+.util-hidden {
+    display: none;
+    visibility: hidden;
 }
 
 .poke-container-main {
