@@ -54,6 +54,11 @@ body {
     display: flex;
     flex-direction: row;
     cursor: pointer;
+    box-shadow: 4px 4px 8px 0 rgba(0,0,0,0.25);
+}
+
+.poke-card:hover {
+    box-shadow: 4px 4px 16px 0 rgba(0,0,0,0.5);
 }
 
 .poke-card .poke-card-info {
@@ -142,13 +147,25 @@ body {
     color: var(--color-text-dark);
 }
 
+/**
+ * Containers
+ */
+.container {
+    margin: 0 16px;
+}
+
+.poke-container {
+    max-width: 1360px;
+    margin: 0 auto;
+    justify-content: space-evenly;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+}
+
 .util-hidden {
     display: none;
     visibility: hidden;
-}
-
-.container {
-    margin: 0 16px;
 }
 
 header {
@@ -191,15 +208,6 @@ header .main-menu a:hover {
 
 header .main-menu .active {
     color: var(--color-rose);
-}
-
-.poke-container {
-    max-width: 920px;
-    margin: 0 auto;
-    justify-content: space-between;
-    display: flex;
-    flex-flow: row;
-    flex-wrap: wrap;
 }
 
 .poke-container-main {
