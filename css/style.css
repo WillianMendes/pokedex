@@ -48,10 +48,10 @@ header {
     position: fixed;
     top: 1rem;
     background-color: var(--poke-color-red);
-    border-radius: 0 32px 32px 0;
+    border-radius: 0 2rem 2rem 0;
     box-shadow: rgba(0, 0, 0, 0.25) 0 4px 16px 0;
     margin: 0 auto;
-    padding: 0 16px;
+    padding: 0 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -62,8 +62,9 @@ header svg {
 }
 
 header .logo {
-    max-height: 50px;
-    margin-left: 16px;
+    max-height: 40px;
+    margin-left: 1rem;
+    padding: 0.5rem 0;
 }
 
 header .main-menu {
@@ -71,10 +72,11 @@ header .main-menu {
 }
 
 header .main-menu a {
-    padding: 24px 8px;
+    padding: 1.5rem 0.5rem;
     color: var(--color-text);
     text-decoration: none;
     font-weight: 600;
+    display: none;
 }
 
 header .main-menu a:hover {
@@ -89,13 +91,13 @@ header .main-menu .active {
  * Containers
  */
 .container {
-    margin: 0 16px;
+    margin: 0 1rem;
 }
 
 .poke-container {
-    max-width: 1360px;
+    max-width: 1000px;
     margin: 0 auto;
-    justify-content: space-evenly;
+    justify-content: space-around;
     display: flex;
     flex-flow: row;
     flex-wrap: wrap;
@@ -118,7 +120,7 @@ header .main-menu .active {
 }
 
 .poke-card:hover {
-    box-shadow: 4px 4px 16px 0 rgba(0,0,0,0.5);
+    box-shadow: 0.25rem 0.25rem 1rem 0 rgba(0,0,0,0.5);
 }
 
 .poke-card .poke-card-info {
