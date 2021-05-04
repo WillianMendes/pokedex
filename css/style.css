@@ -1,47 +1,70 @@
+/**
+ * Colors
+ */
 :root {
-    --color-black: #181010;
-    --color-violet: #84739c;
-    --color-rose: #f7b58c;
-    --color-violet-l: #ffefff;
-    --color-white: rgba(255, 255, 255, 0.9);
+    --color-primary: #673AB7;
+    --color-primary-light: #9575CD;
+    --color-primary-dark: #512DA8;
+    --color-secondary: #FFEB3B;
+    --color-secondary-light: #FFF176;
+    --color-secondary-dark: #FBC02D;
+    --color-text: #FFFFFFFE;
+    --color-text-dark: #0D0724;
+    --color-white: #FFFFFFFE;
+    --color-black: #0D0724;
+
+    /**
+    * Poke Colors
+    */
+    --poke-color-black: #000000E5;
+    --poke-color-blue: #2196F3;
+    --poke-color-brown: #795548;
+    --poke-color-gray: #9E9E9E;
+    --poke-color-green: #4CAF50;
+    --poke-color-pink: #E91E63;
+    --poke-color-purple: #9C27B0;
+    --poke-color-red: #f44336;
+    --poke-color-white: #FFFFFFE5;
+    --poke-color-yellow: #FFEB3B;
+}
+
+/**
+ * CSS Reset
+ */
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
 }
 
 body {
-    background-color: var(--color-violet-l);
-    color: var(--color-white);
-    margin: 0;
+    font-size: 16px;
 }
 
-.util-hidden {
-    display: none;
-    visibility: hidden;
-}
-
-.container {
-    margin: 0 16px;
-}
-
+/**
+ * Header
+ */
 header {
-    background-color: var(--color-violet);
-    margin-bottom: 32px;
+    position: fixed;
+    top: 1rem;
+    background-color: var(--poke-color-red);
+    border-radius: 0 2rem 2rem 0;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 4px 16px 0;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 header svg {
     display: none;
 }
 
-header .container {
-    max-width: 920px;
-    margin: 0 auto;
-    padding: 0 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 header .logo {
-    max-height: 60px;
-    margin-left: -4px;
+    max-height: 40px;
+    margin-left: 1rem;
+    padding: 0.5rem 0;
 }
 
 header .main-menu {
@@ -49,66 +72,149 @@ header .main-menu {
 }
 
 header .main-menu a {
-    padding: 32px 8px;
-    color: var(--color-white);
+    padding: 1.5rem 0.5rem;
+    color: var(--color-text);
     text-decoration: none;
     font-weight: 600;
+    display: none;
 }
 
 header .main-menu a:hover {
-    color: var(--color-rose);
+    color: var(--color-secondary-light);
 }
 
 header .main-menu .active {
-    color: var(--color-rose);
+    color: var(--color-text-dark);
+}
+
+/**
+ * Containers
+ */
+.container {
+    margin: 0 1rem;
 }
 
 .poke-container {
-    max-width: 920px;
+    max-width: 1000px;
     margin: 0 auto;
-    justify-content: space-between;
+    justify-content: space-around;
     display: flex;
     flex-flow: row;
     flex-wrap: wrap;
 }
 
+/**
+ * Poke Cards
+ */
 .poke-card {
-    width: 200px;
-    margin-bottom: 16px;
+    background-color: var(--color-primary);
+    color: var(--color-text);
+    width: 300px;
+    margin: 1rem 0.5rem;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: row;
     cursor: pointer;
+    box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.25);
 }
 
-.poke-img-card {
-    height: 150px;
-    border-radius: 8px 8px 0 0;
-    background-color: var(--color-violet);
-    background-image: url('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    transition: 1s;
+.poke-card:hover {
+    box-shadow: 0.25rem 0.25rem 1rem 0 rgba(0, 0, 0, 0.5);
 }
 
-.poke-card:hover > .poke-img-card {
-    background-color: var(--color-black);
+.poke-card .poke-card-info {
+    width: 40%;
+    padding: 0.5rem 0 0.5rem 0.5rem;
 }
 
-.poke-title {
-    background-color: var(--color-rose);
-    padding: 8px;
-    border-radius: 0 0 8px 8px;
-    text-align: center;
-    transition: 1s;
-}
-
-.poke-title span {
+.poke-card .poke-card-info h2 {
+    font-size: 1.5rem;
     font-weight: 600;
-    color: var(--color-white);
+    text-transform: capitalize;
+    margin-bottom: 1rem;
 }
 
-.poke-card:hover > .poke-body-card .poke-title {
-    background-color: var(--color-violet);
-    color: var(--color-violet);
+.poke-card .poke-card-info .poke-card-type {
+    background-color: var(--color-white);
+    color: var(--color-text-dark);
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: 0.5rem;
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+    display: block;
+}
+
+.poke-card .poke-card-info .poke-card-id {
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-align: left;
+    padding: 0.5rem;
+    display: block;
+}
+
+.poke-card .poke-card-img {
+    width: 60%;
+    padding-left: 0.25rem;
+}
+
+.poke-card .poke-card-img img {
+    width: 100%;
+    height: auto;
+}
+
+/**
+ * Poke Cards Colors
+ */
+.poke-card-black {
+    background-color: var(--poke-color-black);
+}
+
+.poke-card-white {
+    background-color: var(--poke-color-white);
+    color: var(--color-text-dark);
+}
+
+.poke-card-blue {
+    background-color: var(--poke-color-blue);
+}
+
+.poke-card-brown {
+    background-color: var(--poke-color-brown);
+}
+
+.poke-card-gray {
+    background-color: var(--poke-color-gray);
+}
+
+.poke-card-green {
+    background-color: var(--poke-color-green);
+}
+
+.poke-card-pink {
+    background-color: var(--poke-color-pink);
+}
+
+.poke-card-purple {
+    background-color: var(--poke-color-purple);
+}
+
+.poke-card-red {
+    background-color: var(--poke-color-red);
+}
+
+.poke-card-yellow {
+    background-color: var(--poke-color-yellow);
+    color: var(--color-text-dark);
+}
+
+/**
+ * Class utils
+ */
+.util-hidden {
+    display: none;
+    visibility: hidden;
 }
 
 .poke-container-main {
@@ -267,32 +373,19 @@ header .main-menu .active {
 }
 
 @media screen and (max-width: 599px) {
-    .container {
-        margin: 0;
-    }
-
-    header {
-        padding: 8px 0;
-    }
-
-    header .container {
-        flex-direction: row-reverse;
-    }
-
-    header .logo {
-        max-height: 40px;
-    }
-
+    /**
+     * Header
+     */
     header svg {
         fill-rule: evenodd;
         clip-rule: evenodd;
         stroke-linecap: round;
         stroke-linejoin: round;
         stroke-miterlimit: 1.5;
-        cursor:pointer;
+        cursor: pointer;
         height: 25px;
         width: 50px;
-        display: block;
+        display: none;
     }
 
     header svg path {
@@ -315,21 +408,22 @@ header .main-menu .active {
         display: none;
     }
 
+    /**
+     * Containers
+     */
+    .container {
+        margin: 1rem 0.5rem;
+    }
+
     .poke-container {
         justify-content: center;
     }
 
+    /**
+     * Poke Cards
+     */
     .poke-card {
         width: 100%;
-    }
-
-    .poke-img-card {
-        height: 200px;
-        border-radius: 0;
-    }
-
-    .poke-title {
-        border-radius: 0;
     }
 
 }

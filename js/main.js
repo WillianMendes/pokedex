@@ -1,10 +1,4 @@
-import {
-  getElementById,
-  getElementsByClass,
-  parseHTML,
-  createPokeCard,
-  insertPokeAvatar,
-} from "./util/dom.js";
+import { getElementById, getElementsByClass, parseHTML } from "./util/dom.js";
 import {
   createPokeball,
   addPokeballStyle,
@@ -12,6 +6,7 @@ import {
   removePokeballStyle,
 } from "./pokeballLoading.js";
 import Pokemon from "./model/pokemon.js";
+import template from "../template/poke-card.js";
 
 let offsetActual = 0;
 
@@ -39,25 +34,30 @@ const loadPagePokemon = (id) => {
   window.location.href = "/pokedex/pokemon.html";
 };
 
-const createCardElement = async (pokemon) =>
-  Pokemon.getPokemonByUrl(pokemon.url).then((details) => {
-    const pokeCard = createPokeCard(details.id, pokemon.name);
+const createPokeCardElement = async (pokemon) => {
+  Pokemon.getPokemonByUrl(pokemon.url).then(async (pokemonFull) => {
+    const pokemonResumed = Pokemon.createPokemonResumed(
+      pokemonFull.id,
+      pokemonFull.name,
+      pokemonFull.types,
+      pokemonFull.sprites,
+      await Pokemon.getSpecie(pokemonFull.species.url)
+    );
+
+    const pokeCard = template(pokemonResumed);
     const pokeCardElement = parseHTML(pokeCard);
     const container = getElementsByClass("poke-container")[0];
     container.appendChild(pokeCardElement);
     container.lastElementChild.addEventListener("click", () =>
-      loadPagePokemon(details.id)
+      loadPagePokemon(pokemonFull.id)
     );
-    orderPokemons(details.id);
-    insertPokeAvatar(
-      `${details.id}_img`,
-      details.sprites.other["official-artwork"].front_default
-    );
+    orderPokemons(pokemonFull.id);
   });
+};
 
 const getPaginationPokemons = (offset = 0, limit = 20) => {
   Pokemon.getAllPokemons(offset, limit).then((poke) => {
-    poke.results.forEach((pokemon) => createCardElement(pokemon).then());
+    poke.results.forEach((pokemon) => createPokeCardElement(pokemon).then());
   });
 };
 

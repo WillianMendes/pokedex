@@ -10,6 +10,16 @@ class Pokemon {
     Object.seal(this);
   }
 
+  static createPokemonResumed(id, name, types, imgSrc, color) {
+    return {
+      id,
+      name,
+      types: types.map((type) => type.type.name),
+      imgSrc: imgSrc.other["official-artwork"].front_default,
+      color: `poke-card-${color}`,
+    };
+  }
+
   static getAllPokemons(offset = 20, limit = 20) {
     return fetch(`${URL__POKEMONS}?offset=${offset}&limit=${limit}`)
       .then((response) => response.json())
@@ -26,6 +36,12 @@ class Pokemon {
     return fetch(url)
       .then((response) => response.json())
       .then((pokemon) => pokemon);
+  }
+
+  static getSpecie(url) {
+    return fetch(url)
+      .then((response) => response.json())
+      .then((specie) => specie.color.name);
   }
 }
 
