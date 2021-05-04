@@ -37,6 +37,12 @@ class Pokemon {
       .then((response) => response.json())
       .then((pokemon) => pokemon);
   }
+
+  static getSpecie(url) {
+    return fetch(url)
+      .then((response) => response.json())
+      .then((specie) => specie.color.name);
+  }
 }
 
 export { Pokemon as default };
