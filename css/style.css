@@ -42,6 +42,66 @@ body {
 }
 
 /**
+ * Header
+ */
+header {
+    position: fixed;
+    top: 1rem;
+    background-color: var(--poke-color-red);
+    border-radius: 0 32px 32px 0;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 4px 16px 0;
+    margin: 0 auto;
+    padding: 0 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header svg {
+    display: none;
+}
+
+header .logo {
+    max-height: 50px;
+    margin-left: 16px;
+}
+
+header .main-menu {
+    display: flex;
+}
+
+header .main-menu a {
+    padding: 24px 8px;
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+header .main-menu a:hover {
+    color: var(--color-secondary-light);
+}
+
+header .main-menu .active {
+    color: var(--color-text-dark);
+}
+
+/**
+ * Containers
+ */
+.container {
+    margin: 0 16px;
+}
+
+.poke-container {
+    max-width: 1360px;
+    margin: 0 auto;
+    justify-content: space-evenly;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+}
+
+/**
  * Poke Cards
  */
 .poke-card {
@@ -144,66 +204,6 @@ body {
 
 .poke-card-yellow {
     background-color: var(--poke-color-yellow);
-    color: var(--color-text-dark);
-}
-
-/**
- * Containers
- */
-.container {
-    margin: 0 16px;
-}
-
-.poke-container {
-    max-width: 1360px;
-    margin: 0 auto;
-    justify-content: space-evenly;
-    display: flex;
-    flex-flow: row;
-    flex-wrap: wrap;
-}
-
-/**
- * Header
- */
-header {
-    position: fixed;
-    top: 1rem;
-    background-color: var(--poke-color-red);
-    border-radius: 0 32px 32px 0;
-    box-shadow: rgba(0, 0, 0, 0.25) 0 4px 16px 0;
-    margin: 0 auto;
-    padding: 0 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header svg {
-    display: none;
-}
-
-header .logo {
-    max-height: 50px;
-    margin-left: 16px;
-}
-
-header .main-menu {
-    display: flex;
-}
-
-header .main-menu a {
-    padding: 24px 8px;
-    color: var(--color-text);
-    text-decoration: none;
-    font-weight: 600;
-}
-
-header .main-menu a:hover {
-    color: var(--color-secondary-light);
-}
-
-header .main-menu .active {
     color: var(--color-text-dark);
 }
 
