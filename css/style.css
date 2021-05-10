@@ -2,428 +2,451 @@
  * Colors
  */
 :root {
-    --color-primary: #673AB7;
-    --color-primary-light: #9575CD;
-    --color-primary-dark: #512DA8;
-    --color-secondary: #FFEB3B;
-    --color-secondary-light: #FFF176;
-    --color-secondary-dark: #FBC02D;
-    --color-text: #FFFFFFFE;
-    --color-text-dark: #0D0724;
-    --color-white: #FFFFFFFE;
-    --color-black: #0D0724;
+  --color-primary: #673ab7;
+  --color-primary-light: #9575cd;
+  --color-primary-dark: #512da8;
+  --color-secondary: #ffeb3b;
+  --color-secondary-light: #fff176;
+  --color-secondary-dark: #fbc02d;
+  --color-text: #fffffffe;
+  --color-text-dark: #0d0724;
+  --color-white: #fffffffe;
+  --color-black: #0d0724;
 
-    /**
+  /**
     * Poke Colors
     */
-    --poke-color-black: #000000E5;
-    --poke-color-blue: #2196F3;
-    --poke-color-brown: #795548;
-    --poke-color-gray: #9E9E9E;
-    --poke-color-green: #4CAF50;
-    --poke-color-pink: #E91E63;
-    --poke-color-purple: #9C27B0;
-    --poke-color-red: #f44336;
-    --poke-color-white: #FFFFFFE5;
-    --poke-color-yellow: #FFEB3B;
+  --poke-color-black: #000000e5;
+  --poke-color-blue: #2196f3;
+  --poke-color-brown: #795548;
+  --poke-color-gray: #9e9e9e;
+  --poke-color-green: #4caf50;
+  --poke-color-pink: #e91e63;
+  --poke-color-purple: #9c27b0;
+  --poke-color-red: #f44336;
+  --poke-color-white: #ffffffe5;
+  --poke-color-yellow: #ffeb3b;
+}
+
+/**
+ * Fonts
+ */
+@font-face {
+  font-family: "Mohave";
+  src: url("../font/Mohave-Light.otf");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Mohave";
+  src: url("../font/Mohave-Regular.otf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Mohave";
+  src: url("../font/Mohave-Medium.otf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Mohave";
+  src: url("../font/Mohave-Bold.otf");
+  font-weight: 600;
 }
 
 /**
  * CSS Reset
  */
 * {
-    margin: 0;
-    padding: 0;
-    border: none;
+  margin: 0;
+  padding: 0;
+  border: none;
 }
 
 body {
-    font-size: 16px;
+  font-size: 16px;
+  font-family: "Mohave", sans-serif;
 }
 
 /**
  * Header
  */
 header {
-    position: fixed;
-    top: 1rem;
-    background-color: var(--poke-color-red);
-    border-radius: 0 2rem 2rem 0;
-    box-shadow: rgba(0, 0, 0, 0.25) 0 4px 16px 0;
-    margin: 0 auto;
-    padding: 0 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  position: fixed;
+  top: 1rem;
+  background-color: var(--poke-color-red);
+  border-radius: 0 2rem 2rem 0;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 4px 16px 0;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 header svg {
-    display: none;
+  display: none;
 }
 
 header .logo {
-    max-height: 40px;
-    margin-left: 1rem;
-    padding: 0.5rem 0;
+  max-height: 40px;
+  margin-left: 1rem;
+  padding: 0.5rem 0;
 }
 
 header .main-menu {
-    display: flex;
+  display: flex;
 }
 
 header .main-menu a {
-    padding: 1.5rem 0.5rem;
-    color: var(--color-text);
-    text-decoration: none;
-    font-weight: 600;
-    display: none;
+  padding: 1.5rem 0.5rem;
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 600;
+  display: none;
 }
 
 header .main-menu a:hover {
-    color: var(--color-secondary-light);
+  color: var(--color-secondary-light);
 }
 
 header .main-menu .active {
-    color: var(--color-text-dark);
+  color: var(--color-text-dark);
 }
 
 /**
  * Containers
  */
 .container {
-    margin: 0 1rem;
+  margin: 0 1rem;
 }
 
 .poke-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    justify-content: space-around;
-    display: flex;
-    flex-flow: row;
-    flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+  justify-content: space-around;
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
 }
 
 /**
  * Poke Cards
  */
 .poke-card {
-    background-color: var(--color-primary);
-    color: var(--color-text);
-    width: 300px;
-    margin: 1rem 0.5rem;
-    padding: 0.5rem;
-    border-radius: 1rem;
-    display: flex;
-    flex-direction: row;
-    cursor: pointer;
-    box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.25);
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  width: 300px;
+  margin: 1rem 0.5rem;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.25);
 }
 
 .poke-card:hover {
-    box-shadow: 0.25rem 0.25rem 1rem 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0.25rem 0.25rem 1rem 0 rgba(0, 0, 0, 0.5);
 }
 
 .poke-card .poke-card-info {
-    width: 40%;
-    padding: 0.5rem 0 0.5rem 0.5rem;
+  width: 40%;
+  padding: 0.5rem 0 0.5rem 0.5rem;
 }
 
 .poke-card .poke-card-info h2 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    text-transform: capitalize;
-    margin-bottom: 1rem;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02rem;
+  text-transform: capitalize;
+  margin-bottom: 1rem;
 }
 
 .poke-card .poke-card-info .poke-card-type {
-    background-color: var(--color-white);
-    color: var(--color-text-dark);
-    text-align: center;
-    text-transform: capitalize;
-    margin-bottom: 0.5rem;
-    padding: 0.25rem;
-    border-radius: 0.5rem;
-    display: block;
+  background-color: var(--color-white);
+  color: var(--color-text-dark);
+  text-align: center;
+  text-transform: capitalize;
+  margin-bottom: 0.5rem;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+  display: block;
 }
 
 .poke-card .poke-card-info .poke-card-id {
-    font-size: 1.25rem;
-    font-weight: 600;
-    text-align: left;
-    padding: 0.5rem;
-    display: block;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: left;
+  padding: 0.5rem;
+  display: block;
 }
 
 .poke-card .poke-card-img {
-    width: 60%;
-    padding-left: 0.25rem;
+  width: 60%;
+  padding-left: 0.25rem;
 }
 
 .poke-card .poke-card-img img {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
 /**
  * Poke Cards Colors
  */
 .poke-card-black {
-    background-color: var(--poke-color-black);
+  background-color: var(--poke-color-black);
+  color: var(--color-text);
 }
 
 .poke-card-white {
-    background-color: var(--poke-color-white);
-    color: var(--color-text-dark);
+  background-color: var(--poke-color-white);
+  color: var(--color-text-dark);
 }
 
 .poke-card-blue {
-    background-color: var(--poke-color-blue);
+  background-color: var(--poke-color-blue);
+  color: var(--color-text);
 }
 
 .poke-card-brown {
-    background-color: var(--poke-color-brown);
+  background-color: var(--poke-color-brown);
+  color: var(--color-text);
 }
 
 .poke-card-gray {
-    background-color: var(--poke-color-gray);
+  background-color: var(--poke-color-gray);
+  color: var(--color-text);
 }
 
 .poke-card-green {
-    background-color: var(--poke-color-green);
+  background-color: var(--poke-color-green);
+  color: var(--color-text);
 }
 
 .poke-card-pink {
-    background-color: var(--poke-color-pink);
+  background-color: var(--poke-color-pink);
+  color: var(--color-text);
 }
 
 .poke-card-purple {
-    background-color: var(--poke-color-purple);
+  background-color: var(--poke-color-purple);
+  color: var(--color-text);
 }
 
 .poke-card-red {
-    background-color: var(--poke-color-red);
+  background-color: var(--poke-color-red);
+  color: var(--color-text);
 }
 
 .poke-card-yellow {
-    background-color: var(--poke-color-yellow);
+  background-color: var(--poke-color-yellow);
+  color: var(--color-text-dark);
+}
+
+.bar-box .bar {
+  width: 100%;
+  height: 8px;
+  background-color: var(--color-black);
+  border-radius: 8px;
+  margin: 4px 0 12px 0;
+}
+
+.bar-box .bar .bar-fill {
+  background-color: var(--color-primary);
+}
+
+.bar-10 {
+  width: 10%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.bar-20 {
+  width: 20%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.bar-30 {
+  width: 30%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.bar-40 {
+  width: 40%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.bar-50 {
+  width: 50%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.bar-60 {
+  width: 60%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.bar-70 {
+  width: 70%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.bar-80 {
+  width: 80%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.bar-90 {
+  width: 90%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.bar-100 {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+@media screen and (max-width: 599px) {
+  /**
+     * Header
+     */
+  header {
+    display: none;
+  }
+
+  header svg {
+    fill-rule: evenodd;
+    clip-rule: evenodd;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 1.5;
+    cursor: pointer;
+    height: 25px;
+    width: 50px;
+    display: none;
+  }
+
+  header svg path {
+    fill: none;
+    stroke: white;
+    stroke-width: 1px;
+  }
+
+  header #top,
+  #bottom {
+    stroke-dasharray: 30, 75.39;
+    transition: all 0.6s cubic-bezier(0.6, 0.33, 0.67, 1.29);
+  }
+
+  header svg.active #top,
+  header svg.active #bottom {
+    stroke-dasharray: 75.39;
+    stroke-dashoffset: -60;
+  }
+
+  header .main-menu {
+    display: none;
+  }
+
+  /**
+     * Containers
+     */
+  .container {
+    margin: 1rem 0.5rem;
+  }
+
+  .poke-container {
+    justify-content: center;
+  }
+
+  /**
+     * Poke Cards
+     */
+  .poke-card {
+    width: 100%;
+  }
+
+  /****************
+     * Page Pokemon *
+     ****************/
+  .poke-header {
+    width: 100%;
+    padding: 0.75rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .poke-header.poke-card-white {
+    background-color: #F6F6F6;
     color: var(--color-text-dark);
+  }
+
+  .poke-header .poke-header-img {
+    width: 300px;
+    margin-top: -32px;
+    align-self: center;
+    z-index: 10;
+  }
+
+  .poke-header .poke-header-main .poke-header-info {
+    font-weight: 600;
+    padding: 1rem 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .poke-header .poke-header-main .poke-header-info .title {
+    font-size: 2rem;
+    text-transform: capitalize;
+  }
+
+  .poke-header .poke-header-main .poke-header-info .poke-id {
+    font-size: 2.5rem;
+  }
+
+  .poke-header .poke-header-main .poke-header-type .poke-type {
+    background-color: var(--color-white);
+    color: var(--color-text-dark);
+    text-align: center;
+    text-transform: capitalize;
+    margin: 0 0.25rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.75rem;
+    box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.25);
+    display: inline-flex;
+  }
+
+  .poke-body {
+    width: 100%;
+    background-color: white;
+    padding: 64px 8px;
+    border-radius: 32px 32px 0 0;
+    margin-top: -64px;
+  }
 }
 
 /**
  * Class utils
  */
 .util-hidden {
-    display: none;
-    visibility: hidden;
+  display: none;
+  visibility: hidden;
 }
 
-.poke-container-main {
-    max-width: 920px;
-    margin: 0 auto;
-    padding: 0 16px;
-}
-
-.poke-container-main .poke-main {
-    display: flex;
-    flex-direction: row;
-}
-
-.poke-main .poke-img {
-    width: 40%;
-    height: 100%;
-    margin-right: 32px;
-}
-
-.poke-main .poke-img img {
-    width: 100%;
-    max-width: 250px;
-}
-
-.poke-main .poke-info {
-    background-color: var(--color-violet);
-    color: var(--color-white);
-    border-radius: 16px;
-    width: 60%;
-    padding: 16px;
-    display: flex;
-    flex-direction: row;
-}
-
-.poke-main .poke-info .left {
-    width: 50%;
-}
-
-.poke-main .poke-info .right {
-    width: 50%;
-}
-
-.poke-main .poke-info .poke-types span,
-.poke-main .poke-info .poke-abilities span {
-    background-color: black;
-    border-radius: 8px;
-    padding: 6px 8px;
-}
-
-.poke-main .poke-info .poke-types span.grass {
-    background-color: green;
-}
-
-.poke-main .poke-info .poke-types span.poison {
-    background-color: blueviolet;
-}
-
-.poke-stats {
-    background-color: var(--color-violet);
-    color: var(--color-white);
-    border-radius: 16px;
-    padding: 16px;
-    margin-top: 16px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.poke-stats .poke-stats-left {
-    margin-right: 8px;
-}
-
-.poke-stats .poke-stats-right {
-    margin-left: 8px;
-}
-
-.poke-stats .poke-stats-left,
-.poke-stats .poke-stats-right {
-    width: 50%;
-}
-
-.label {
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.bar-box .bar {
-    width: 100%;
-    height: 8px;
-    background-color: var(--color-black);
-    border-radius: 8px;
-    margin: 4px 0 12px 0;
-}
-
-.bar-box .bar .bar-fill {
-    background-color: var(--color-rose);
-}
-
-.bar-10 {
-    width: 10%;
-    height: 100%;
-    border-radius: 8px;
-}
-
-.bar-20 {
-    width: 20%;
-    height: 100%;
-    border-radius: 8px;
-}
-
-.bar-30 {
-    width: 30%;
-    height: 100%;
-    border-radius: 8px;
-}
-
-.bar-40 {
-    width: 40%;
-    height: 100%;
-    border-radius: 8px;
-}
-
-.bar-50 {
-    width: 50%;
-    height: 100%;
-    border-radius: 8px;
-}
-
-.bar-60 {
-    width: 60%;
-    height: 100%;
-    border-radius: 8px;
-}
-
-.bar-70 {
-    width: 70%;
-    height: 100%;
-    border-radius: 8px;
-}
-
-.bar-80 {
-    width: 80%;
-    height: 100%;
-    border-radius: 8px;
-}
-
-.bar-90 {
-    width: 90%;
-    height: 100%;
-    border-radius: 8px;
-}
-
-.bar-100 {
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
-}
-
-@media screen and (max-width: 599px) {
-    /**
-     * Header
-     */
-    header svg {
-        fill-rule: evenodd;
-        clip-rule: evenodd;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-miterlimit: 1.5;
-        cursor: pointer;
-        height: 25px;
-        width: 50px;
-        display: none;
-    }
-
-    header svg path {
-        fill: none;
-        stroke: white;
-        stroke-width: 1px;
-    }
-
-    header #top, #bottom {
-        stroke-dasharray: 30, 75.39;
-        transition: all 0.6s cubic-bezier(0.6, 0.33, 0.67, 1.29);
-    }
-
-    header svg.active #top, header svg.active #bottom {
-        stroke-dasharray: 75.39;
-        stroke-dashoffset: -60;
-    }
-
-    header .main-menu {
-        display: none;
-    }
-
-    /**
-     * Containers
-     */
-    .container {
-        margin: 1rem 0.5rem;
-    }
-
-    .poke-container {
-        justify-content: center;
-    }
-
-    /**
-     * Poke Cards
-     */
-    .poke-card {
-        width: 100%;
-    }
-
+.m-0 {
+  margin: 0;
 }

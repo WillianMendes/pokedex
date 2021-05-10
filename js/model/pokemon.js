@@ -20,6 +20,21 @@ class Pokemon {
     };
   }
 
+  static async createPokemon(pokemon) {
+    return {
+      ...this.createPokemonResumed(
+        pokemon.id,
+        pokemon.name,
+        pokemon.types,
+        pokemon.sprites,
+        await Pokemon.getSpecie(pokemon.species.url)
+      ),
+      weight: pokemon.weight * 10,
+      height: pokemon.height * 10,
+      stats: this.formatStats(pokemon.stats),
+    };
+  }
+
   static getAllPokemons(offset = 20, limit = 20) {
     return fetch(`${URL__POKEMONS}?offset=${offset}&limit=${limit}`)
       .then((response) => response.json())
@@ -42,6 +57,13 @@ class Pokemon {
     return fetch(url)
       .then((response) => response.json())
       .then((specie) => specie.color.name);
+  }
+
+  static formatStats(stats) {
+    return stats.map((stat) => ({
+      name: stat.stat.name.replace("-", " "),
+      value: stat.base_stat,
+    }));
   }
 }
 
