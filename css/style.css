@@ -169,6 +169,7 @@ header .main-menu .active {
  */
 .poke-card-black {
   background-color: var(--poke-color-black);
+  color: var(--color-text);
 }
 
 .poke-card-white {
@@ -178,30 +179,37 @@ header .main-menu .active {
 
 .poke-card-blue {
   background-color: var(--poke-color-blue);
+  color: var(--color-text);
 }
 
 .poke-card-brown {
   background-color: var(--poke-color-brown);
+  color: var(--color-text);
 }
 
 .poke-card-gray {
   background-color: var(--poke-color-gray);
+  color: var(--color-text);
 }
 
 .poke-card-green {
   background-color: var(--poke-color-green);
+  color: var(--color-text);
 }
 
 .poke-card-pink {
   background-color: var(--poke-color-pink);
+  color: var(--color-text);
 }
 
 .poke-card-purple {
   background-color: var(--poke-color-purple);
+  color: var(--color-text);
 }
 
 .poke-card-red {
   background-color: var(--poke-color-red);
+  color: var(--color-text);
 }
 
 .poke-card-yellow {
@@ -346,9 +354,15 @@ header .main-menu .active {
      ****************/
   .poke-header {
     width: 100%;
+    padding: 0.75rem 0.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+
+  .poke-header.poke-card-white {
+    background-color: #F6F6F6;
+    color: var(--color-text-dark);
   }
 
   .poke-header .poke-header-img {
@@ -368,6 +382,7 @@ header .main-menu .active {
   .poke-header .poke-header-main .poke-header-info .title {
     font-size: 2rem;
     font-weight: 600;
+    text-transform: capitalize;
   }
 
   .poke-header .poke-header-main .poke-header-info .poke-id {
@@ -376,7 +391,7 @@ header .main-menu .active {
   }
 
   .poke-header .poke-header-main .poke-header-type .poke-type {
-    color: var(--color-text);
+    background-color: var(--color-white);
     text-align: center;
     text-transform: capitalize;
     margin: 0 0.25rem;
