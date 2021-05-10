@@ -10,19 +10,12 @@ const getPokeId = () => {
 
 const loadPokemon = (id) => {
   Pokemon.getPokemon(id).then(async (pokemon) => {
-    const pokemonResumed = Pokemon.createPokemonResumed(
-      pokemon.id,
-      pokemon.name,
-      pokemon.types,
-      pokemon.sprites,
-      await Pokemon.getSpecie(pokemon.species.url)
-    );
+    const pokemonResumed = await Pokemon.createPokemon(pokemon);
 
-    const pokeCard = template(pokemonResumed);
-    const pokeCardElement = parseHTML(pokeCard);
+    const pokePage = template(pokemonResumed);
+    const pokePageElement = parseHTML(pokePage);
     const container = getElementsByClass("poke-container")[0];
-    container.appendChild(pokeCardElement);
-    console.log(pokemonResumed);
+    container.appendChild(pokePageElement);
   });
 };
 
