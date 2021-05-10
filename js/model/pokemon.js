@@ -10,13 +10,14 @@ class Pokemon {
     Object.seal(this);
   }
 
-  static createPokemonResumed(id, name, types, imgSrc, color) {
+  static createPokemonResumed(id, name, types, imgSrc, color, stats) {
     return {
       id,
       name,
       types: types.map((type) => type.type.name),
       imgSrc: imgSrc.other["official-artwork"].front_default,
       color: `poke-card-${color}`,
+      stats: this.formatStats(stats),
     };
   }
 
@@ -42,6 +43,13 @@ class Pokemon {
     return fetch(url)
       .then((response) => response.json())
       .then((specie) => specie.color.name);
+  }
+
+  static formatStats(stats) {
+    return stats.map((stat) => ({
+      name: stat.stat.name.replace("-", " "),
+      value: stat.base_stat,
+    }));
   }
 }
 
