@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Pokédex</title>
   <link rel="stylesheet" href="css/style.css">
@@ -10,110 +11,55 @@
 <body>
 <div class="main">
   <header>
-    <div class="container">
-      <img class="logo" src="image/poke-logo.png" alt="Logo pokedex">
-      <nav class="main-menu">
-        <a href="index.html">Pokemons</a>
-        <a href="pokemon.html" class="active">Capture</a>
-        <a href="#">Seja meu chefe</a>
-      </nav>
-      <svg
-        width="265"
-        height="265"
-        viewBox="0 0 36 22"
-        xmlns="http://www.w3.org/2000/svg"
-        onclick="this.classList.toggle('active')"
-      >
-        <g transform="matrix(1,0,0,1,-419.5,-274.131)">
-          <g id="arrow_rocket">
+    <img class="logo" src="image/poke-logo.png" alt="Logo pokedex">
+    <nav class="main-menu">
+      <a href="index.html">Pokemons</a>
+      <a href="pokemon.html" class="active">Capture</a>
+      <a href="#">Seja meu chefe</a>
+    </nav>
+    <svg
+      width="265"
+      height="265"
+      viewBox="0 0 36 22"
+      xmlns="http://www.w3.org/2000/svg"
+      onclick="this.classList.toggle('active')"
+    >
+      <g transform="matrix(1,0,0,1,-419.5,-274.131)">
+        <g id="arrow_rocket">
+          <path
+            id="top"
+            d="M420,274.631L450,274.631C450,274.631 459.044,284.599 450,284.599C440.956,284.599 420,284.646 420,284.646L430.014,274.631"
+          />
+          <g transform="matrix(1,-1.22465e-16,-1.22465e-16,-1,0,569.277)">
             <path
-              id="top"
+              id="bottom"
               d="M420,274.631L450,274.631C450,274.631 459.044,284.599 450,284.599C440.956,284.599 420,284.646 420,284.646L430.014,274.631"
             />
-            <g transform="matrix(1,-1.22465e-16,-1.22465e-16,-1,0,569.277)">
-              <path
-                id="bottom"
-                d="M420,274.631L450,274.631C450,274.631 459.044,284.599 450,284.599C440.956,284.599 420,284.646 420,284.646L430.014,274.631"
-              />
-            </g>
-            <g transform="matrix(1,0,0,1,0,-0.0234189)">
-              <path id="middle" d="M420,284.646L450,284.646" />
-            </g>
+          </g>
+          <g transform="matrix(1,0,0,1,0,-0.0234189)">
+            <path id="middle" d="M420,284.646L450,284.646" />
           </g>
         </g>
-      </svg>
-    </div>
+      </g>
+    </svg>
   </header>
-  <div class="poke-container-main">
-    <div class="poke-main">
-      <div class="poke-img">
-        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png" alt="">
+  <div class="container m-0">
+    <div class="poke-container">
+      <div class="poke-header poke-card-green">
+        <div class="poke-header-main">
+          <div class="poke-header-info">
+            <h1 class="title">Bulbasaur</h1>
+            <span class="poke-id">#01</span>
+          </div>
+          <div class="poke-header-type">
+            <div class="poke-type poke-card-green">Grass</div>
+            <div class="poke-type poke-card-purple">Poison</div>
+          </div>
+        </div>
+        <img class="poke-header-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png" alt="">
       </div>
-      <div class="poke-info">
-        <div class="left">
-          <p class="label">Nome</p>
-          <p id="name">Ivysaur</p>
-          <p class="label">Abitar</p>
-          <p id="habitat">Grassland</p>
-          <div id="types" class="poke-types">
-            <p class="label">Tipo</p>
-            <span class="grass">Grass</span>
-            <span class="poison">Poison</span>
-          </div>
-        </div>
-        <div class="right">
-          <p class="label">Altura</p>
-          <p id="height">1.00m</p>
-          <p class="label">Peso</p>
-          <p id="weight">1.30kg</p>
-          <div id="abilities" class="poke-abilities">
-            <p class="label">Habilidades</p>
-            <span>Overgrow</span>
-            <span>Chlorophyll</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="poke-stats">
-      <div class="poke-stats-left">
-        <div class="bar-box">
-          <span>HP</span>
-          <div class="bar">
-            <div class="bar-fill bar-50"></div>
-          </div>
-        </div>
-        <div class="bar-box">
-          <span>ATK</span>
-          <div class="bar">
-            <div class="bar-fill bar-20"></div>
-          </div>
-        </div>
-        <div class="bar-box">
-          <span>DEF</span>
-          <div class="bar">
-            <div class="bar-fill bar-30"></div>
-          </div>
-        </div>
-      </div>
-      <div class="poke-stats-right">
-        <div class="bar-box">
-          <span>S-ATK</span>
-          <div class="bar">
-            <div class="bar-fill bar-90"></div>
-          </div>
-        </div>
-        <div class="bar-box">
-          <span>S-DEF</span>
-          <div class="bar">
-            <div class="bar-fill bar-70"></div>
-          </div>
-        </div>
-        <div class="bar-box">
-          <span>SPD</span>
-          <div class="bar">
-            <div class="bar-fill bar-40"></div>
-          </div>
-        </div>
+      <div class="poke-body">
+
       </div>
     </div>
   </div>
