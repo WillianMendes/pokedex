@@ -10,14 +10,27 @@ class Pokemon {
     Object.seal(this);
   }
 
-  static createPokemonResumed(id, name, types, imgSrc, color, stats = []) {
+  static createPokemonResumed(id, name, types, imgSrc, color) {
     return {
       id,
       name,
       types: types.map((type) => type.type.name),
       imgSrc: imgSrc.other["official-artwork"].front_default,
       color: `poke-card-${color}`,
-      stats: this.formatStats(stats),
+    };
+  }
+
+  static async createPokemon(pokemon) {
+    return {
+      ...this.createPokemonResumed(
+        pokemon.id,
+        pokemon.name,
+        pokemon.types,
+        pokemon.sprites,
+        await Pokemon.getSpecie(pokemon.species.url)
+      ),
+      weight: pokemon.weight * 10,
+      stats: this.formatStats(pokemon.stats),
     };
   }
 
