@@ -10,7 +10,7 @@ class Pokemon {
     Object.seal(this);
   }
 
-  static createPokemonResumed(id, name, types, imgSrc, color, stats) {
+  static createPokemonResumed(id, name, types, imgSrc, color, stats = []) {
     return {
       id,
       name,
