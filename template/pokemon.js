@@ -1,6 +1,15 @@
 const templateTypes = (types) =>
   types.map((type) => `<div class='poke-type'>${type}</div>`);
 
+const templateBaseStat = (stats) =>
+  stats.map(
+    (stat) =>
+      `<p style="text-transform: capitalize">${stat.name} ${stat.value}</p>`
+  );
+
+const templateAttrBase = (label, value) =>
+  `<p style="text-transform: capitalize">${label} ${value}</p>`;
+
 const template = (pokemon) =>
   `<div class="poke-header ${pokemon.color}">
     <div class="poke-header-main">
@@ -17,7 +26,11 @@ const template = (pokemon) =>
     <img class="poke-header-img" src="${pokemon.imgSrc}" alt="">
   </div>
   <div class="poke-body">
-    
-  </div>`.replace(",", "");
+    <div class="poke-body-stats">
+      ${templateAttrBase("Weight", pokemon.weight)}
+      ${templateAttrBase("Height", pokemon.height)}
+      ${templateBaseStat(pokemon.stats)}
+    </div>
+  </div>`.replaceAll(",", "");
 
 export default template;
