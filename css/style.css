@@ -29,6 +29,33 @@
 }
 
 /**
+ * Fonts
+ */
+@font-face {
+  font-family: "Mohave";
+  src: url("../font/Mohave-Light.otf");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Mohave";
+  src: url("../font/Mohave-Regular.otf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Mohave";
+  src: url("../font/Mohave-Medium.otf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Mohave";
+  src: url("../font/Mohave-Bold.otf");
+  font-weight: 600;
+}
+
+/**
  * CSS Reset
  */
 * {
@@ -39,6 +66,7 @@
 
 body {
   font-size: 16px;
+  font-family: "Mohave", sans-serif;
 }
 
 /**
@@ -129,8 +157,9 @@ header .main-menu .active {
 }
 
 .poke-card .poke-card-info h2 {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   font-weight: 600;
+  letter-spacing: 0.02rem;
   text-transform: capitalize;
   margin-bottom: 1rem;
 }
@@ -147,7 +176,7 @@ header .main-menu .active {
 }
 
 .poke-card .poke-card-info .poke-card-id {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: 600;
   text-align: left;
   padding: 0.5rem;
@@ -373,6 +402,7 @@ header .main-menu .active {
   }
 
   .poke-header .poke-header-main .poke-header-info {
+    font-weight: 600;
     padding: 1rem 0.5rem;
     display: flex;
     justify-content: space-between;
@@ -381,17 +411,16 @@ header .main-menu .active {
 
   .poke-header .poke-header-main .poke-header-info .title {
     font-size: 2rem;
-    font-weight: 600;
     text-transform: capitalize;
   }
 
   .poke-header .poke-header-main .poke-header-info .poke-id {
-    font-size: 3rem;
-    font-weight: bold;
+    font-size: 2.5rem;
   }
 
   .poke-header .poke-header-main .poke-header-type .poke-type {
     background-color: var(--color-white);
+    color: var(--color-text-dark);
     text-align: center;
     text-transform: capitalize;
     margin: 0 0.25rem;
