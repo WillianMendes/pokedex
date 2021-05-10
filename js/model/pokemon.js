@@ -30,6 +30,7 @@ class Pokemon {
         await Pokemon.getSpecie(pokemon.species.url)
       ),
       weight: pokemon.weight * 10,
+      height: pokemon.height * 10,
       stats: this.formatStats(pokemon.stats),
     };
   }
