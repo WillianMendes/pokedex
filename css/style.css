@@ -268,6 +268,15 @@ header .main-menu .active {
 .bar-box .bar .bar-fill {
   height: 100%;
   border-radius: 8px;
+  animation-name: progressBar;
+  animation-iteration-count: 1;
+  animation-duration: 2s;
+}
+
+@keyframes progressBar {
+  0% {
+    width: 0;
+  }
 }
 
 @media screen and (max-width: 599px) {
@@ -406,6 +415,7 @@ header .main-menu .active {
     border-bottom: 2px solid var(--color-semi-black);
     padding: 12px 0;
     flex: 1 1 60px;
+    z-index: 500;
   }
 
   .poke-body .poke-body-tabs a.title.active {
