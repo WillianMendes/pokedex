@@ -12,6 +12,7 @@
   --color-text-dark: #0d0724;
   --color-white: #fffffffe;
   --color-black: #0d0724;
+  --color-semi-black: #0d0724aa;
 
   /**
     * Poke Colors
@@ -246,74 +247,25 @@ header .main-menu .active {
   color: var(--color-text-dark);
 }
 
+.bar-box {
+  font-size: 1.25rem;
+  text-transform: capitalize;
+}
+
+.bar-box .label {
+  font-weight: 500;
+}
+
 .bar-box .bar {
   width: 100%;
   height: 8px;
-  background-color: var(--color-black);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-semi-black);
   border-radius: 8px;
   margin: 4px 0 12px 0;
 }
 
 .bar-box .bar .bar-fill {
-  background-color: var(--color-primary);
-}
-
-.bar-10 {
-  width: 10%;
-  height: 100%;
-  border-radius: 8px;
-}
-
-.bar-20 {
-  width: 20%;
-  height: 100%;
-  border-radius: 8px;
-}
-
-.bar-30 {
-  width: 30%;
-  height: 100%;
-  border-radius: 8px;
-}
-
-.bar-40 {
-  width: 40%;
-  height: 100%;
-  border-radius: 8px;
-}
-
-.bar-50 {
-  width: 50%;
-  height: 100%;
-  border-radius: 8px;
-}
-
-.bar-60 {
-  width: 60%;
-  height: 100%;
-  border-radius: 8px;
-}
-
-.bar-70 {
-  width: 70%;
-  height: 100%;
-  border-radius: 8px;
-}
-
-.bar-80 {
-  width: 80%;
-  height: 100%;
-  border-radius: 8px;
-}
-
-.bar-90 {
-  width: 90%;
-  height: 100%;
-  border-radius: 8px;
-}
-
-.bar-100 {
-  width: 100%;
   height: 100%;
   border-radius: 8px;
 }
@@ -437,6 +389,30 @@ header .main-menu .active {
     border-radius: 32px 32px 0 0;
     margin-top: -64px;
   }
+
+  .poke-body .poke-body-tabs {
+    padding: 8px 0;
+    margin: -64px 0 8px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .poke-body .poke-body-tabs a.title {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--color-semi-black);
+    text-align: center;
+    text-decoration: none;
+    border-bottom: 2px solid var(--color-semi-black);
+    padding: 12px 0;
+    flex: 1 1 60px;
+  }
+
+  .poke-body .poke-body-tabs a.title.active {
+    color: var(--color-text-dark);
+    border-bottom: 2px solid var(--color-black);
+  }
+
 }
 
 /**

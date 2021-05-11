@@ -1,14 +1,20 @@
 const templateTypes = (types) =>
   types.map((type) => `<div class='poke-type'>${type}</div>`);
 
-const templateBaseStat = (stats) =>
+const templateBaseStat = (stats, color) =>
   stats.map(
     (stat) =>
-      `<p style="text-transform: capitalize">${stat.name} ${stat.value}</p>`
+      `<div class="bar-box">
+        <span class="label">${stat.name}:</span> ${stat.value}
+        <div class="bar">
+          <div class="bar-fill ${color}" style="width: ${stat.value / 2.55}%;">
+          </div>
+        </div>
+      </div>`
   );
 
 const templateAttrBase = (label, value) =>
-  `<p style="text-transform: capitalize">${label} ${value}</p>`;
+  `<p class="attr-base">${label} ${value}</p>`;
 
 const template = (pokemon) =>
   `<div class="poke-header ${pokemon.color}">
@@ -26,10 +32,15 @@ const template = (pokemon) =>
     <img class="poke-header-img" src="${pokemon.imgSrc}" alt="">
   </div>
   <div class="poke-body">
+    <div class="poke-body-tabs">
+      <a class="title active" href="#">Status</a>
+      <a class="title" href="#">Evolution</a>
+      <a class="title" href="#">Info</a>
+    </div>
     <div class="poke-body-stats">
+      ${templateBaseStat(pokemon.stats, pokemon.color)}
       ${templateAttrBase("Weight", pokemon.weight)}
       ${templateAttrBase("Height", pokemon.height)}
-      ${templateBaseStat(pokemon.stats)}
     </div>
   </div>`.replaceAll(",", "");
 
