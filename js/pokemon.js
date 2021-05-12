@@ -11,7 +11,6 @@ const getPokeId = () => {
 const loadPokemon = (id) => {
   Pokemon.getPokemon(id).then(async (pokemon) => {
     const pokemonFull = await Pokemon.createPokemon(pokemon);
-
     const pokePage = template(pokemonFull);
     const pokePageElement = parseHTML(pokePage);
     const container = getElementsByClass("poke-container")[0];
