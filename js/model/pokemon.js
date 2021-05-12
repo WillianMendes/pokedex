@@ -21,17 +21,31 @@ class Pokemon {
   }
 
   static async createPokemon(pokemon) {
+    const specie = await Pokemon.getSpecie(pokemon.species.url);
+    const evolution = await Pokemon.getEvolutionChain(
+      specie.evolution_chain.url
+    );
     return {
       ...this.createPokemonResumed(
         pokemon.id,
         pokemon.name,
         pokemon.types,
         pokemon.sprites,
-        await Pokemon.getSpecie(pokemon.species.url)
+        specie.color.name
       ),
       weight: pokemon.weight * 10,
       height: pokemon.height * 10,
       stats: this.formatStats(pokemon.stats),
+      abilities: this.formatAbilities(pokemon.abilities),
+      baseHappiness: specie.base_happiness,
+      captureRate: specie.capture_rate,
+      genderRate: specie.gender_rate,
+      growthRate: specie.growth_rate.name,
+      habitat: specie.habitat.name,
+      isBaby: specie.is_baby,
+      isLegendary: specie.is_legendary,
+      isMythical: specie.is_mythical,
+      evolution,
     };
   }
 
@@ -56,7 +70,13 @@ class Pokemon {
   static getSpecie(url) {
     return fetch(url)
       .then((response) => response.json())
-      .then((specie) => specie.color.name);
+      .then((specie) => specie);
+  }
+
+  static getEvolutionChain(url) {
+    return fetch(url)
+      .then((response) => response.json())
+      .then((evolution) => evolution.chain);
   }
 
   static formatStats(stats) {
@@ -64,6 +84,10 @@ class Pokemon {
       name: stat.stat.name.replace("-", " "),
       value: stat.base_stat,
     }));
+  }
+
+  static formatAbilities(abilities) {
+    return abilities.map(({ ability }) => ability.name.replace("-", " "));
   }
 }
 
