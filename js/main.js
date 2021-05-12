@@ -36,12 +36,13 @@ const loadPagePokemon = (id) => {
 
 const createPokeCardElement = async (pokemon) => {
   Pokemon.getPokemonByUrl(pokemon.url).then(async (pokemonFull) => {
+    const specie = await Pokemon.getSpecie(pokemonFull.species.url);
     const pokemonResumed = Pokemon.createPokemonResumed(
       pokemonFull.id,
       pokemonFull.name,
       pokemonFull.types,
       pokemonFull.sprites,
-      await Pokemon.getSpecie(pokemonFull.species.url)
+      specie.color.name
     );
 
     const pokeCard = template(pokemonResumed);
