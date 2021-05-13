@@ -423,6 +423,22 @@ header .main-menu .active {
     border-bottom: 2px solid var(--color-black);
   }
 
+  .poke-body .poke-body-info .attr-base {
+    font-size: 1.25rem;
+    padding: 0.25rem 0;
+    display: flex;
+  }
+
+  .poke-body .poke-body-info .attr-base .attr-label {
+    color: var(--color-semi-black);
+    font-weight: 600;
+    padding-right: 0.5rem;
+  }
+
+  .poke-body .poke-body-info .attr-base .attr-value {
+    font-weight: 500;
+    text-transform: capitalize;
+  }
 }
 
 /**
