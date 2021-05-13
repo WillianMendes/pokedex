@@ -13,8 +13,11 @@ const templateBaseStat = (stats, color) =>
       </div>`
   );
 
-const templateAttrBase = (label, value) =>
-  `<p class="attr-base"><strong>${label}: </strong>${value}</p>`;
+const templateAttrBase = (label, value, type = "") =>
+  `<div class="attr-base">
+    <p class="attr-label">${label}</p>
+    <p class="attr-value">${value}${type}</p>
+  </div>`;
 
 const template = (pokemon) =>
   `<div class="poke-header ${pokemon.color}">
@@ -44,16 +47,29 @@ const template = (pokemon) =>
       ${pokemon.evolution}
     </div>
     <div data-tab="info_tab" class="poke-body-info util-hidden">
-      ${templateAttrBase("Weight", pokemon.weight)}
-      ${templateAttrBase("Height", pokemon.height)}
+      ${templateAttrBase(
+        "National ID",
+        pokemon.id.length < 9 ? `#0${pokemon.id}` : `#${pokemon.id}`
+      )}
+      ${templateAttrBase("Name", pokemon.name)}
+      ${templateAttrBase("Weight", (pokemon.weight / 100).toFixed(2), " KG")}
+      ${templateAttrBase(
+        "Height",
+        (pokemon.height / 100).toFixed(2),
+        " Meters"
+      )}
       ${templateAttrBase("Base Happiness", pokemon.baseHappiness)}
-      ${templateAttrBase("Capture Rate", pokemon.captureRate)}
-      ${templateAttrBase("Gender Rate", pokemon.genderRate)}
+      ${templateAttrBase("Capture Rate", pokemon.captureRate, "%")}
+      ${templateAttrBase(
+        "Gender Rate",
+        `${(pokemon.genderRate * 100) / 8}`,
+        "% Female"
+      )}
       ${templateAttrBase("Growth Rate", pokemon.growthRate)}
       ${templateAttrBase("Habitat", pokemon.habitat)}
-      ${templateAttrBase("Baby?", pokemon.isBaby)}
-      ${templateAttrBase("Legendary?", pokemon.isLegendary)}
-      ${templateAttrBase("Mythical?", pokemon.isMythical)}
+      ${templateAttrBase("Baby", pokemon.isBaby ? "Yes" : "No")}
+      ${templateAttrBase("Legendary", pokemon.isBaby ? "Yes" : "No")}
+      ${templateAttrBase("Mythical", pokemon.isBaby ? "Yes" : "No")}
       ${pokemon.abilities}
    </div>
   </div>`.replaceAll(",", "");
