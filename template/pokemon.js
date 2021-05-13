@@ -14,7 +14,7 @@ const templateBaseStat = (stats, color) =>
   );
 
 const templateAttrBase = (label, value) =>
-  `<p class="attr-base">${label} ${value}</p>`;
+  `<p class="attr-base"><strong>${label}: </strong>${value}</p>`;
 
 const template = (pokemon) =>
   `<div class="poke-header ${pokemon.color}">
@@ -33,15 +33,31 @@ const template = (pokemon) =>
   </div>
   <div class="poke-body">
     <div class="poke-body-tabs">
-      <a class="title active" href="#">Status</a>
-      <a class="title" href="#">Evolution</a>
-      <a class="title" href="#">Info</a>
+      <a id="status_tab" class="title active" href="#">Status</a>
+      <a id="evolution_tab" class="title" href="#">Evolution</a>
+      <a id="info_tab" class="title" href="#">Info</a>
     </div>
-    <div class="poke-body-stats">
+    <div data-tab="status_tab" class="poke-body-stats">
       ${templateBaseStat(pokemon.stats, pokemon.color)}
+    </div>
+    <div data-tab="evolution_tab" class="poke-body-evolution util-hidden">
+      ${pokemon.evolution}
+    </div>
+    <div data-tab="info_tab" class="poke-body-info util-hidden">
       ${templateAttrBase("Weight", pokemon.weight)}
       ${templateAttrBase("Height", pokemon.height)}
-    </div>
+      ${templateAttrBase("Base Happiness", pokemon.baseHappiness)}
+      ${templateAttrBase("Height", pokemon.height)}
+      ${templateAttrBase("Capture Rate", pokemon.captureRate)}
+      ${templateAttrBase("Gender Rate", pokemon.genderRate)}
+      ${templateAttrBase("Gender Rate", pokemon.growthRate)}
+      ${templateAttrBase("Growth Rate", pokemon.genderRate)}
+      ${templateAttrBase("Habitat", pokemon.habitat)}
+      ${templateAttrBase("Baby?", pokemon.isBaby)}
+      ${templateAttrBase("Legendary?", pokemon.isLegendary)}
+      ${templateAttrBase("Mythical?", pokemon.isMythical)}
+      ${pokemon.abilities}
+   </div>
   </div>`.replaceAll(",", "");
 
 export default template;
