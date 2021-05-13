@@ -47,11 +47,9 @@ const template = (pokemon) =>
       ${templateAttrBase("Weight", pokemon.weight)}
       ${templateAttrBase("Height", pokemon.height)}
       ${templateAttrBase("Base Happiness", pokemon.baseHappiness)}
-      ${templateAttrBase("Height", pokemon.height)}
       ${templateAttrBase("Capture Rate", pokemon.captureRate)}
       ${templateAttrBase("Gender Rate", pokemon.genderRate)}
-      ${templateAttrBase("Gender Rate", pokemon.growthRate)}
-      ${templateAttrBase("Growth Rate", pokemon.genderRate)}
+      ${templateAttrBase("Growth Rate", pokemon.growthRate)}
       ${templateAttrBase("Habitat", pokemon.habitat)}
       ${templateAttrBase("Baby?", pokemon.isBaby)}
       ${templateAttrBase("Legendary?", pokemon.isLegendary)}
